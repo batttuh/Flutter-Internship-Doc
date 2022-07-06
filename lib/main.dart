@@ -7,6 +7,7 @@ import 'package:flutter_full_learn/101/stack_learn.dart';
 import 'package:flutter_full_learn/101/stateful_learn.dart';
 import 'package:flutter_full_learn/101/statefull_lifecycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
+import 'package:flutter_full_learn/101/textfield_learn.dart';
 import 'package:flutter_full_learn/demos/stack_demo.dart';
 
 import '101/color_learn.dart';
@@ -27,12 +28,19 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        listTileTheme: ListTileThemeData(
+        
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(
+            color: Colors.red,
+            fontWeight: FontWeight.bold,
+          )
+        ),
+        listTileTheme: const ListTileThemeData(
           dense: true,
           contentPadding: EdgeInsets.zero,
         )
         ,
-        progressIndicatorTheme: ProgressIndicatorThemeData(
+        progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: Colors.white),
           errorColor: ColorsItems.sulu,
           appBarTheme: const AppBarTheme(
@@ -41,7 +49,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: LifeCycleLearn(text: 'Hello Here',),
+      home: TextFieldLearn(),
     );
   }
 }
