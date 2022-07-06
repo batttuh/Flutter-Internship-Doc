@@ -6,6 +6,7 @@
 - dispose: when we down the page it works.
 - didUpdateWidget: we can access oldWidget and compare it with the newWidget
 - inspect : we can see variables prop
+- mixin is work like interface we can inherit it using with
 <h2>TextField</h2>
 
 - ~ it makes integer the number== a~*b
@@ -25,3 +26,19 @@
 - ListView.builder has itemBuilder and it returns widget this prop makes recurrent widgets
 - ListView.separated has separatorBuilder
 - we can define the itemCount
+<h2>Navigator</h2>
+
+- Navigator.of(context).push(MaterialPageRoute(builder:(context){return page})) : push method 
+- fullscreenDialog: screen coming from bottom
+- settings: we can transfer the data
+- Navigator.of(context).pop()
+- if we want to take data which is coming from settings we need to take in didChangeDependencies using ModelRoute.of(context).settings.arguments
+<h2>Tabbar</h2>
+
+- Firstly we need to use DefaultTabController
+- In the body TabBarView, DefaultTabController's child is Scaffold
+- In the appBar we can control widget using, bottom: TabBar(tabs: ...)
+- In the bottom, bottomNavigationBar:BottomAppBar(child: TabBar(tabs:...))
+- In the BottomAppBar we can use notchMargin and shape: CircularNotchedRectangle()
+- For using tabController we need to use TickerProviderStateMixin and in the vsync we need to define this
+- we can define tabBarTheme
