@@ -8,6 +8,7 @@ import 'package:flutter_full_learn/101/stateful_learn.dart';
 import 'package:flutter_full_learn/101/statefull_lifecycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/textfield_learn.dart';
+import 'package:flutter_full_learn/202/tab_learn.dart';
 import 'package:flutter_full_learn/demos/stack_demo.dart';
 
 import '101/color_learn.dart';
@@ -28,7 +29,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.red,
+          
+        ),
+        bottomAppBarTheme: BottomAppBarTheme(
+          shape: CircularNotchedRectangle(),
+        ),
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(
             color: Colors.red,
@@ -49,7 +57,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: TextFieldLearn(),
+      home: TabLearn(),
     );
   }
 }
