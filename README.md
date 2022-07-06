@@ -39,6 +39,74 @@
 - In the body TabBarView, DefaultTabController's child is Scaffold
 - In the appBar we can control widget using, bottom: TabBar(tabs: ...)
 - In the bottom, bottomNavigationBar:BottomAppBar(child: TabBar(tabs:...))
-- In the BottomAppBar we can use notchMargin and shape: CircularNotchedRectangle()
+- In the BottomAppBar we can use notchMargin and shape: CircularNotchedRectangle(),in the scaffold extendBody can make our floating action bar's shape's cool.
 - For using tabController we need to use TickerProviderStateMixin and in the vsync we need to define this
 - we can define tabBarTheme
+
+<h2> HttpPostModels</h2>
+
+```Dart
+
+class PostModel{
+  final int userId;
+  final int id;
+  final String title;
+  final String body;
+
+  PostModel(this.userId, this.id, this.body, this.title);
+}
+class PostModel1{
+   int? userId;
+   int? id;
+   String? title;
+   String? body;
+
+  
+}
+//For Local
+class PostModel2{
+   int userId;
+   int id;
+   String title;
+   String body;
+
+  PostModel2(this.userId, this.id, this.body, this.title);
+}
+
+class PostModel3{
+   final int userId;
+   final int id;
+   final String title;
+   final String body;
+
+  PostModel3({required this.userId,required this.id,required this.body,required this.title});
+}
+
+class PostModel4{
+   final int _userId;
+   final int _id;
+   final String _title;
+   final String _body;
+
+  PostModel4({
+   required int userId,
+   required int id,
+   required String title,
+   required String body}):_userId=userId,_id=id,_title=title,_body=body;
+   
+}
+//For service
+class PostModel5{
+  final int? userId;
+  final int? id;
+  final String? title;
+  String? body;
+PostModel5(this.userId,this.id,this.title,this.body);
+ void updateBody(String? data){
+  if(data!=null&&data.isNotEmpty){
+    body=title;
+    }
+  }
+}
+```
+We can use copyWith for updating
