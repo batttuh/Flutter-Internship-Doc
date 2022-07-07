@@ -18,6 +18,20 @@
 - focusNode and textInputAction are using for clicking the next in keyboard
 - in theme we can define inputDecorationTheme
 - FocusNode class is basically an object that can be used to obtain keyboard focus and to handle keyboard events.
+- obscuringCharacter change the password seen
+- suffix can write right side to the textField
+- In decoration we can make border
+- using obscureText can change the visibility password
+- AnimatedCrossFade make animation our icon
+
+<h2>TextFormField</h2>
+
+- We can use Form widget for making form and we need to define GlobalKey<FormState> key=GlobalKey();
+- Also in the Textformfield we need to use validator
+- With key we can control the text field
+- autoValidateMode:AutoValideMode.always trigger to validate method
+- DropdownButtonFormField can be used for selecting item in it
+
 <h2> ListView</h2>
 
 - we have not problem with height
@@ -110,3 +124,138 @@ PostModel5(this.userId,this.id,this.title,this.body);
 }
 ```
 We can use copyWith for updating
+<h2>Services</h2>
+
+- https://pub.dev/packages/http
+- https://pub.dev/packages/dio
+- https://javiercbk.github.io/json_to_dart/ 
+
+```Dart
+import 'dart:io';
+
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
+
+import 'comment_model.dart';
+import 'post_model.dart';
+
+abstract class IPostService {
+  Future<bool> addItemToService(PostModel postModel);
+  Future<bool> putItemToService(PostModel postModel, int id);
+  Future<bool> deleteItemToService(int id);
+  Future<List<PostModel>?> fetchPostItemsAdvance();
+  Future<List<CommentModel>?> fetchRelatedCommentsWithPostId(int postId);
+}
+
+class PostService implements IPostService {
+  final Dio _dio;
+  PostService() : _dio = Dio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com/'));
+
+  @override
+  Future<bool> addItemToService(PostModel postModel) async {
+    try {
+      final response = await _dio.post(_PostServicePaths.posts.name, data: postModel);
+
+      return response.statusCode == HttpStatus.created;
+    } on DioError catch (error) {
+      _ShowDebug.showDioError(error, this);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> putItemToService(PostModel postModel, int id) async {
+    try {
+      final response = await _dio.put('${_PostServicePaths.posts.name}/$id', data: postModel);
+
+      return response.statusCode == HttpStatus.ok;
+    } on DioError catch (error) {
+      _ShowDebug.showDioError(error, this);
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> deleteItemToService(int id) async {
+    try {
+      final response = await _dio.delete('${_PostServicePaths.posts.name}/$id');
+
+      return response.statusCode == HttpStatus.ok;
+    } on DioError catch (error) {
+      _ShowDebug.showDioError(error, this);
+    }
+    return false;
+  }
+
+  @override
+  Future<List<PostModel>?> fetchPostItemsAdvance() async {
+    try {
+      final response = await _dio.get(_PostServicePaths.posts.name);
+
+      if (response.statusCode == HttpStatus.ok) {
+        final _datas = response.data;
+
+        if (_datas is List) {
+          return _datas.map((e) => PostModel.fromJson(e)).toList();
+        }
+      }
+    } on DioError catch (exception) {
+      _ShowDebug.showDioError(exception, this);
+    }
+    return null;
+  }
+
+  @override
+  Future<List<CommentModel>?> fetchRelatedCommentsWithPostId(int postId) async {
+    try {
+      final response =
+          await _dio.get(_PostServicePaths.comments.name, queryParameters: {_PostQueryPaths.postId.name: postId});
+
+      if (response.statusCode == HttpStatus.ok) {
+        final _datas = response.data;
+
+        if (_datas is List) {
+          return _datas.map((e) => CommentModel.fromJson(e)).toList();
+        }
+      }
+    } on DioError catch (exception) {
+      _ShowDebug.showDioError(exception, this);
+    }
+    return null;
+  }
+}
+
+enum _PostServicePaths { posts, comments }
+enum _PostQueryPaths { postId }
+
+class _ShowDebug {
+  static void showDioError<T>(DioError error, T type) {
+    if (kDebugMode) {
+      print(error.message);
+      print(type);
+      print('-----');
+    }
+  }
+}
+```
+<h2>Color generator</h2> 
+
+- https://colornamer.robertcooper.me/
+
+<h2> OOP </h2>
+
+- on : can make special class it determines which class can be use this class
+- enum and extension can be used for clean code
+
+<h2> Animation </h2>
+
+- AnimatedCrossFade 
+- animatedOpacity
+- animatedDefaultTextStyle
+- AnimatedIcon
+- AnimatedContainer
+- AnimatedList
+<h2>Exception</h2>
+- For exception we need to define a new class and impelemt Exception class then we can define toString function ro return exception
+- If we want a throw a exception we can use this exception class
+- 
