@@ -256,6 +256,14 @@ class _ShowDebug {
 - AnimatedContainer
 - AnimatedList
 <h2>Exception</h2>
+
 - For exception we need to define a new class and impelemt Exception class then we can define toString function ro return exception
 - If we want a throw a exception we can use this exception class
-- 
+<h2>shared_preferences</h2>
+
+- https://pub.dev/packages/shared_preferences
+<h2>Secure Context</h2>
+
+- it is more performancable than shared_preferences
+- https://pub.dev/packages/flutter_secure_storage
+- it is store in keyChain
