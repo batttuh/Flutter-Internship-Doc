@@ -23,6 +23,15 @@
 - In decoration we can make border
 - using obscureText can change the visibility password
 - AnimatedCrossFade make animation our icon
+
+<h2>TextFormField</h2>
+
+- We can use Form widget for making form and we need to define GlobalKey<FormState> key=GlobalKey();
+- Also in the Textformfield we need to use validator
+- With key we can control the text field
+- autoValidateMode:AutoValideMode.always trigger to validate method
+- DropdownButtonFormField can be used for selecting item in it
+
 <h2> ListView</h2>
 
 - we have not problem with height
@@ -246,4 +255,7 @@ class _ShowDebug {
 - AnimatedIcon
 - AnimatedContainer
 - AnimatedList
+<h2>Exception</h2>
+- For exception we need to define a new class and impelemt Exception class then we can define toString function ro return exception
+- If we want a throw a exception we can use this exception class
 - 
