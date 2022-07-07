@@ -1,10 +1,10 @@
-class PostModel{
+class PostModel10{
   final int userId;
   final int id;
   final String title;
   final String body;
 
-  PostModel(this.userId, this.id, this.body, this.title);
+  PostModel10(this.userId, this.id, this.body, this.title);
 }
 class PostModel1{
    int? userId;

@@ -15,6 +15,7 @@ import '101/color_learn.dart';
 import '101/list_tile.dart';
 import '101/padding_learn.dart';
 import '101/page_view_learn.dart';
+import '202/service/service_learn_view.dart';
 import 'demos/demo.dart';
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        
         tabBarTheme: TabBarTheme(
           labelColor: Colors.white,
           unselectedLabelColor: Colors.red,
@@ -48,6 +50,11 @@ class MyApp extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
         )
         ,
+        cardTheme:  CardTheme(
+          shape:  RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+          ),
+        ),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: Colors.white),
           errorColor: ColorsItems.sulu,
@@ -57,7 +64,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: TabLearn(),
+      home: ServiceLearn(),
     );
   }
 }
