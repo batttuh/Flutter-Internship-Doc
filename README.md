@@ -241,6 +241,9 @@ class _ShowDebug {
 <h2>Color generator</h2> 
 
 - https://colornamer.robertcooper.me/
+<h2>MediaQuery</h2>
+
+- with MediaQuery we can access the phone width height
 
 <h2> OOP </h2>
 
@@ -267,3 +270,48 @@ class _ShowDebug {
 - it is more performancable than shared_preferences
 - https://pub.dev/packages/flutter_secure_storage
 - it is store in keyChain
+<h2>Sheet componant</h2>
+
+- it can be used for choose something or filter it
+with using barrierColor we can change the background of the widget back
+- isScrollControlled when opened the widget it filled all screen so we need to use SizedBox to change height
+- with Navigator.of(context).pop() we can close
+
+<h2>Alert</h2>
+
+- https://api.flutter.dev/flutter/material/AlertDialog-class.html
+- showDialog and we need to return DialogWidget or AlertDialog
+- barrierDismisable makes force toclick button to exit so that you can not touch click except the dialog
+<h3> InteractiveViewer makes zoom</h3>
+
+<h3> Bundle Identifier is uniq key for our app</h3>
+
+<h2> X Code and Android Studio Extensions<h2>
+
+-  https://youtu.be/9oP15tsQHsU?t=4252
+
+<h2> Generic</h2>
+
+- with list.fold we can sum values
+- we can strict the function and in the imheritance we manage  
+- Iterable can be used for list
+<h2> Testing</h2>
+
+- file needs to end with test
+- expect(result, what we assume)
+
+<h2> Part/partof</h2>
+
+- if we want to communicate with private class in another folder we are using
+- part "path": who wants to be used path needs to describe main class
+- partof "path": who wants use path needs to describe private class
+
+<h2> CallBack</h2>
+
+- https://youtu.be/YSN-1OiNnLM?t=1500
+
+<h2>FutureBuiler</h2>
+
+- Very advantage usage for Http methods because in the switch(snapshot.connectionState) we can check all of the statement
+- In the done we check snapshot.hasData and then we can use listview.builder
+- AutomaticKeepAliveClientMixin makes alive dta and we need to define super.build(context) in the function return true
