@@ -282,9 +282,9 @@ with using barrierColor we can change the background of the widget back
 - https://api.flutter.dev/flutter/material/AlertDialog-class.html
 - showDialog and we need to return DialogWidget or AlertDialog
 - barrierDismisable makes force toclick button to exit so that you can not touch click except the dialog
-<h3> InteractiveViewer makes zoom</h3>
+<h1 InteractiveViewer makes zoom</h1>
 
-<h3> Bundle Identifier is uniq key for our app</h3>
+<h1 Bundle Identifier is uniq key for our app</h1>
 
 <h2> X Code and Android Studio Extensions<h2>
 
@@ -315,3 +315,22 @@ with using barrierColor we can change the background of the widget back
 - Very advantage usage for Http methods because in the switch(snapshot.connectionState) we can check all of the statement
 - In the done we check snapshot.hasData and then we can use listview.builder
 - AutomaticKeepAliveClientMixin makes alive dta and we need to define super.build(context) in the function return true
+<h3>States</h3>
+<h2>Provider</h2>
+
+- https://pub.dev/packages/provider
+- companents can communicate with each other
+- screens can communicate with each other too
+- In the scaffold we need to wrap with widget and ChangeNotifierProvider if we up the scaffold we need to write in builder
+- we need to use ChangeNotifier class in the provider class
+- notifyListeners is used for changing variable
+- in main class context.read just read one time context.watch always see the variables
+- Selector can be used just listen state like data is coming or not bool statement and then we can use CirculerProgressIndıcator in Scaffold
+- In the theme changes we can use provider
+- in the runApp(MultiProvider) needs to be written if we wants to change all of the screen we are using ChangeNotifierProvider
+
+<h2> json_serializible json_annotation build_runner<h2>
+
+- using for model and adding in dev_dependencies
+- @JsonSerializable needs to be written up to the class
+- part "folderName.g.dart"
