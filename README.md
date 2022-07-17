@@ -47,6 +47,12 @@
 - settings: we can transfer the data
 - Navigator.of(context).pop()
 - if we want to take data which is coming from settings we need to take in didChangeDependencies using ModelRoute.of(context).settings.arguments
+- In the main dart we can use routes and if we want a use initialRoute we use "/"
+- we cam use directly pushNamed()
+- If we do not wanna come back old screen we need to use pushReplacementName
+- onGenerateRoute can be used too
+![10](https://user-images.githubusercontent.com/76205004/179397783-89f741f0-0df9-4879-a09c-603c8b49f98e.png)
+
 <h2>Tabbar</h2>
 
 - Firstly we need to use DefaultTabController
@@ -329,8 +335,59 @@ with using barrierColor we can change the background of the widget back
 - In the theme changes we can use provider
 - in the runApp(MultiProvider) needs to be written if we wants to change all of the screen we are using ChangeNotifierProvider
 
-<h2> json_serializible json_annotation build_runner<h2>
+    ![2022-07-17 14_34_50-Temelden Zirveye Flutter_#17 Navigation package, Mobx, ImagePicker - YouTube](https://user-images.githubusercontent.com/76205004/179396268-8ede2540-6990-4e98-8826-d3f1cd85ac24.png)
+
+<h2> json_serializible json_annotation build_runner</h2>
 
 - using for model and adding in dev_dependencies
 - @JsonSerializable needs to be written up to the class
 - part "folderName.g.dart"
+- @JsonKey(name:"") we can change the name of this attribute
+- sometimes json returns enum so we need to add @JsonValue
+- we can change the variable using function with using JsonKey(FromJson: function)
+
+<h3> Equtable using for checking 2 variables equality. Need to add in core in pubspec.yaml</h3>
+
+<h2>Lottie</h2>
+
+- we can use for loading screen 
+- in product folder we can create constant and add item in lottie_itemds.dart
+- https://lottiefiles.com/
+- https://pub.dev/packages/lottie
+
+<h2> Singleton</h2>
+
+- if there is a only one instance and this instance do not even creaete from another class we can use singleton
+- we need to change constructer wtih ._()
+
+
+<h3> Collection </h3> 
+
+<h2> Mobx</h2> 
+
+- https://pub.dev/packages/mobx
+- the actions inform the observables widgets and these widgets just refresh theirselves
+- mobxCodegen can help us at the compile time
+- @obersable @action params using for the listining or make a action
+- In the view folder we can use observer for looking is data changed
+
+<h3> ImagePicker is using for chooseing image at phone and we can use this with ImageCropper</h3>
+<h3> Mockito we can test our code and it needs to be add in dev_dependencies @GenerateMocks([]) </h3>
+<h3> typedef ImageLoader= void Function(String ... ) typeDef can be used for clean code
+
+<h2> Token </h2>
+
+- we need to extemds INetworkModel<TokenModel> and implement toJson and fromJson it comes from vexana package https://pub.dev/packages/vexana
+- we need to test this token firstly
+
+<h2>bloc</h2>
+
+- https://pub.dev/packages/bloc
+- CubicState
+- In the body we need to use BlocProvider and it use generic
+- with using emit() we can inform the screen it is changed
+- IgnorePointer can make ignore widgets
+- BlocSelector can be checked the bool value
+- blocConsumer we can listen the widget
+
+<h3> Device Preview we can see  widget at other devices</h3>
