@@ -47,6 +47,12 @@
 - settings: we can transfer the data
 - Navigator.of(context).pop()
 - if we want to take data which is coming from settings we need to take in didChangeDependencies using ModelRoute.of(context).settings.arguments
+- In the main dart we can use routes and if we want a use initialRoute we use "/"
+- we cam use directly pushNamed()
+- If we do not wanna come back old screen we need to use pushReplacementName
+- onGenerateRoute can be used too
+![10](https://user-images.githubusercontent.com/76205004/179397783-89f741f0-0df9-4879-a09c-603c8b49f98e.png)
+
 <h2>Tabbar</h2>
 
 - Firstly we need to use DefaultTabController
@@ -241,6 +247,9 @@ class _ShowDebug {
 <h2>Color generator</h2> 
 
 - https://colornamer.robertcooper.me/
+<h2>MediaQuery</h2>
+
+- with MediaQuery we can access the phone width height
 
 <h2> OOP </h2>
 
@@ -267,3 +276,118 @@ class _ShowDebug {
 - it is more performancable than shared_preferences
 - https://pub.dev/packages/flutter_secure_storage
 - it is store in keyChain
+<h2>Sheet componant</h2>
+
+- it can be used for choose something or filter it
+with using barrierColor we can change the background of the widget back
+- isScrollControlled when opened the widget it filled all screen so we need to use SizedBox to change height
+- with Navigator.of(context).pop() we can close
+
+<h2>Alert</h2>
+
+- https://api.flutter.dev/flutter/material/AlertDialog-class.html
+- showDialog and we need to return DialogWidget or AlertDialog
+- barrierDismisable makes force toclick button to exit so that you can not touch click except the dialog
+<h1 InteractiveViewer makes zoom</h1>
+
+<h1 Bundle Identifier is uniq key for our app</h1>
+
+<h2> X Code and Android Studio Extensions<h2>
+
+-  https://youtu.be/9oP15tsQHsU?t=4252
+
+<h2> Generic</h2>
+
+- with list.fold we can sum values
+- we can strict the function and in the imheritance we manage  
+- Iterable can be used for list
+<h2> Testing</h2>
+
+- file needs to end with test
+- expect(result, what we assume)
+
+<h2> Part/partof</h2>
+
+- if we want to communicate with private class in another folder we are using
+- part "path": who wants to be used path needs to describe main class
+- partof "path": who wants use path needs to describe private class
+
+<h2> CallBack</h2>
+
+- https://youtu.be/YSN-1OiNnLM?t=1500
+
+<h2>FutureBuiler</h2>
+
+- Very advantage usage for Http methods because in the switch(snapshot.connectionState) we can check all of the statement
+- In the done we check snapshot.hasData and then we can use listview.builder
+- AutomaticKeepAliveClientMixin makes alive dta and we need to define super.build(context) in the function return true
+<h3>States</h3>
+<h2>Provider</h2>
+
+- https://pub.dev/packages/provider
+- companents can communicate with each other
+- screens can communicate with each other too
+- In the scaffold we need to wrap with widget and ChangeNotifierProvider if we up the scaffold we need to write in builder
+- we need to use ChangeNotifier class in the provider class
+- notifyListeners is used for changing variable
+- in main class context.read just read one time context.watch always see the variables
+- Selector can be used just listen state like data is coming or not bool statement and then we can use CirculerProgressIndıcator in Scaffold
+- In the theme changes we can use provider
+- in the runApp(MultiProvider) needs to be written if we wants to change all of the screen we are using ChangeNotifierProvider
+
+    ![2022-07-17 14_34_50-Temelden Zirveye Flutter_#17 Navigation package, Mobx, ImagePicker - YouTube](https://user-images.githubusercontent.com/76205004/179396268-8ede2540-6990-4e98-8826-d3f1cd85ac24.png)
+
+<h2> json_serializible json_annotation build_runner</h2>
+
+- using for model and adding in dev_dependencies
+- @JsonSerializable needs to be written up to the class
+- part "folderName.g.dart"
+- @JsonKey(name:"") we can change the name of this attribute
+- sometimes json returns enum so we need to add @JsonValue
+- we can change the variable using function with using JsonKey(FromJson: function)
+
+<h3> Equtable using for checking 2 variables equality. Need to add in core in pubspec.yaml</h3>
+
+<h2>Lottie</h2>
+
+- we can use for loading screen 
+- in product folder we can create constant and add item in lottie_itemds.dart
+- https://lottiefiles.com/
+- https://pub.dev/packages/lottie
+
+<h2> Singleton</h2>
+
+- if there is a only one instance and this instance do not even creaete from another class we can use singleton
+- we need to change constructer wtih ._()
+
+
+<h3> Collection </h3> 
+
+<h2> Mobx</h2> 
+
+- https://pub.dev/packages/mobx
+- the actions inform the observables widgets and these widgets just refresh theirselves
+- mobxCodegen can help us at the compile time
+- @obersable @action params using for the listining or make a action
+- In the view folder we can use observer for looking is data changed
+
+<h3> ImagePicker is using for chooseing image at phone and we can use this with ImageCropper</h3>
+<h3> Mockito we can test our code and it needs to be add in dev_dependencies @GenerateMocks([]) </h3>
+<h3> typedef ImageLoader= void Function(String ... ) typeDef can be used for clean code
+
+<h2> Token </h2>
+
+- we need to extemds INetworkModel<TokenModel> and implement toJson and fromJson it comes from vexana package https://pub.dev/packages/vexana
+- we need to test this token firstly
+
+<h2>bloc</h2>
+
+- https://pub.dev/packages/bloc
+- CubicState
+- In the body we need to use BlocProvider and it use generic
+- with using emit() we can inform the screen it is changed
+- IgnorePointer can make ignore widgets
+- BlocSelector can be checked the bool value
+- blocConsumer we can listen the widget
+
+<h3> Device Preview we can see  widget at other devices</h3>
