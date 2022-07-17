@@ -17,6 +17,8 @@ import '101/list_tile.dart';
 import '101/padding_learn.dart';
 import '101/page_view_learn.dart';
 import '202/service/service_learn_view.dart';
+import '202/sheet_learn.dart';
+import '303/lottie_learn.dart';
 import 'demos/demo.dart';
 void main() {
   runApp(const MyApp());
@@ -65,7 +67,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: SharedLearn(),
+      home: LottieLearn(),
     );
   }
 }
